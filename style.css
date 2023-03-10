@@ -1,0 +1,80 @@
+:root {
+  --text-color: #0a3245;
+  --bg-color: white;
+  --max-width: 1000px;
+}
+
+.body {
+  color: var(--text-color);
+  background: var(--bg-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.wrapper {
+  margin: 10px auto;
+  width: var(--max-width);
+  padding: 0 1em;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mem {
+  /* position: relative; */
+  border-top: 1px solid var(--text-color);
+  margin-bottom: 1px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mem input {
+  /* position: absolute; */
+  opacity: 0;
+  z-index: -1;
+}
+
+.mem label {
+  /* position: relative; */
+  /* display: block; */
+  padding: 0 0 0 1em;
+  font-weight: bold;
+  line-height: 3;
+  cursor: pointer;
+}
+
+.mem-content {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.35s;
+  -o-transition: max-height 0.35s;
+  transition: max-height 0.35s;
+}
+
+/* :checked */
+.mem input:checked ~ .mem-content {
+  max-height: 100vh;
+}
+/* Icon */
+.mem label::after {
+  /* position: absolute; */
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.mem input + label::after {
+  content: "\25BC";
+}
+
+.mem input:checked + label::after {
+  transform: rotateX(180deg);
+}
