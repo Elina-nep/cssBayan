@@ -70,10 +70,6 @@ label {
   cursor: pointer;
 }
 
-.mem-content:active {
-  opacity: 0.8;
-}
-
 #mem1 {
   background-image: url("./src/css.png");
 }
@@ -130,6 +126,15 @@ input:checked ~ label .icon {
   .mem-content:hover {
     height: var(--mem-height);
     opacity: 1;
+  }
+
+  input:active ~ label {
+    color: var(--not-active-text-color);
+  }
+
+  input:active ~ label .mem-content {
+    height: var(--mem-height);
+    opacity: 0.5;
   }
 }
 
