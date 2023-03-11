@@ -51,9 +51,8 @@ input {
 }
 
 label {
-  padding: 0 0 0 1em;
   font-weight: bold;
-  line-height: 3;
+  line-height: 2;
   cursor: pointer;
   text-align: left;
   transition: 0.35s;
@@ -69,6 +68,10 @@ label {
   transition: 0.35s;
   margin-bottom: 1em;
   cursor: pointer;
+}
+
+.mem-content:active {
+  opacity: 0.8;
 }
 
 #mem1 {
@@ -88,7 +91,7 @@ label {
 }
 
 /* :checked */
-input:checked ~ .mem-content {
+input:checked ~ label .mem-content {
   height: var(--mem-height);
   opacity: 1;
 }
@@ -119,7 +122,7 @@ input:checked ~ label .icon {
     --not-active-text-color: #00aaaa;
   }
 
-  input:hover ~ .mem-content {
+  input:hover ~ label .mem-content {
     height: var(--mem-height);
     opacity: 1;
   }
